@@ -14,12 +14,29 @@ namespace Memorama
 {
     public partial class Memorama : Form
     {
+        private System.Windows.Forms.Timer cronometro;
+        private TimeSpan tiempoTranscurrido;
+        private DateTime horaInicio;
+        private bool corriendo;
         private string[] info;
         Registro inicio;
 
+        private void InicializarCronometro()
+        {
+            tiempoTranscurrido = TimeSpan.Zero;
+            cronometro = new System.Windows.Forms.Timer();
+            cronometro.Interval = 1000; // Intervalo de 1 segundo
+            cronometro.Tick += Cronometro_Tick;
+        }
+        private void Cronometro_Tick(object sender, EventArgs e)
+        {
+            tiempoTranscurrido = DateTime.Now - horaInicio;
+            contadorTiempo.Text = tiempoTranscurrido.ToString(@"hh\:mm\:ss");
+        }
         public Memorama(Registro ini, string[] inf)
         {
             InitializeComponent();
+            InicializarCronometro();
             info = inf;
             inicio = ini;
         }
@@ -32,7 +49,7 @@ namespace Memorama
 
         private void b1_Click(object sender, EventArgs e)
         {
-            b1.Text =null;
+            b1.Text = null;
             b1.Image = Image.FromFile("C:\\Users\\Caoz0\\source\\repos\\Memorama\\Resources\\Risu.jpg");
             b1.AutoSize = true;
         }
@@ -85,12 +102,14 @@ namespace Memorama
 
         private void Memorama_Load(object sender, EventArgs e)
         {
-
+            horaInicio = DateTime.Now - tiempoTranscurrido;
+            cronometro.Start();
+            corriendo = true;
         }
 
         private void b15_Click(object sender, EventArgs e)
         {
-            b15.Text =null;
+            b15.Text = null;
             b15.Image = Image.FromFile("C:\\Users\\Caoz0\\source\\repos\\Memorama\\Resources\\Bae.jpg");
             b15.AutoSize = true;
         }
@@ -105,14 +124,14 @@ namespace Memorama
         private void b11_Click(object sender, EventArgs e)
         {
             b11.Text = null;
-            b11.Image = Image.FromFile("C:\\Users\\Caoz0\\source\\repos\\Memorama\\Resources\\Aki.jpg");
+            b11.Image = Image.FromFile("D:\\Codigos\\Memorama\\Memorama\\Resources\\Aki.jpg");
             b11.AutoSize = true;
         }
 
         private void b5_Click(object sender, EventArgs e)
         {
             b5.Text = null;
-            b5.Image = Image.FromFile("C:\\Users\\Caoz0\\source\\repos\\Memorama\\Resources\\Aki.jpg");
+            b5.Image = Image.FromFile("D:\\Codigos\\Memorama\\Memorama\\Resources\\Aki.jpg");
             b5.AutoSize = true;
         }
 
@@ -219,6 +238,22 @@ namespace Memorama
             b9.Text = null;
             b9.Image = Image.FromFile("C:\\Users\\Caoz0\\source\\repos\\Memorama\\Resources\\Sora.jpg");
             b9.AutoSize = true;
+        }
+
+        
+
+        private void botonPausar_Click(object sender, EventArgs e)
+        {
+            if (!corriendo)
+            {
+                horaInicio = DateTime.Now - tiempoTranscurrido;
+                cronometro.Start();
+                corriendo = true;
+            } else if (corriendo)
+            {
+                cronometro.Stop();
+                corriendo = false;
+            }
         }
     }
 }
