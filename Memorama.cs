@@ -30,7 +30,14 @@ namespace Memorama
 
         private void b1_Click(object sender, EventArgs e)
         {
-            
+            b1.Image = Image.FromFile("D:\\Codigos\\Memorama\\Memorama\\imagenes\\t1.jpg");
+            b1.AutoSize = true;
+        }
+
+        private void testing_Click(object sender, EventArgs e)
+        {
+            b1.Image = null;
+            b1.AutoSize = false;
         }
     }
 }
