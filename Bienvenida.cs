@@ -27,6 +27,7 @@ namespace Memorama
             this.Hide();
 
         }
+        
 
         private void Registro_Load(object sender, EventArgs e)
         {

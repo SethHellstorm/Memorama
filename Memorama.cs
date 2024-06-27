@@ -21,7 +21,7 @@ namespace Memorama
         private bool corriendo;
         private string[] info;
         private int[] par = new int[2];
-        private static int conteoSeleccionado = 0, parResuleto = 0;
+        private static int conteoSeleccionado = 0, parResuleto = 0,contMovimiento = 0;
         Registro inicio;
 
         private void InicializarCronometro()
@@ -48,9 +48,11 @@ namespace Memorama
         {
             par[conteoSeleccionado] = a;
             conteoSeleccionado++;
+            conteoMovimiento.Text = Convert.ToString(contMovimiento/2);
             if (conteoSeleccionado == 2)
             {
                 parConteo(par);
+                conteoSeleccionado = 0;
             }
 
         }
@@ -62,63 +64,83 @@ namespace Memorama
             {
                 case (10, 9):
                     parResuleto++;
+                    MessageBox.Show("A resuelto" + parResuleto);
                     break;
                 case (9, 10):
                     parResuleto++;
+                    MessageBox.Show("A resuelto" + parResuleto);
                     break;
                 case (11, 5):
                     parResuleto++;
+                    MessageBox.Show("B resuelto" + parResuleto);
                     break;
                 case (5, 11):
                     parResuleto++;
+                    MessageBox.Show("B resuelto" + parResuleto);
                     break;
                 case (13, 12):
                     parResuleto++;
+                    MessageBox.Show("C resuelto" + parResuleto);
                     break;
                 case (12, 13):
                     parResuleto++;
+                    MessageBox.Show("C resuelto" + parResuleto);
                     break;
                 case (2, 15):
                     parResuleto++;
+                    MessageBox.Show("D resuelto" + parResuleto);
                     break;
                 case (15, 2):
                     parResuleto++;
+                    MessageBox.Show("D resuelto" + parResuleto);
                     break;
                 case (4, 6):
                     parResuleto++;
+                    MessageBox.Show("E resuelto" + parResuleto);
                     break;
                 case (6, 4):
                     parResuleto++;
+                    MessageBox.Show("E resuelto" + parResuleto);
                     break;
                 case (8, 16):
                     parResuleto++;
+                    MessageBox.Show("F resuelto" + parResuleto);
                     break;
                 case (16, 8):
                     parResuleto++;
+                    MessageBox.Show("F resuelto" + parResuleto);
                     break;
                 case (19, 7):
                     parResuleto++;
+                    MessageBox.Show("G resuelto" + parResuleto);
                     break;
                 case (7, 19):
                     parResuleto++;
+                    MessageBox.Show("G resuelto" + parResuleto);
                     break;
                 case (17, 18):
                     parResuleto++;
+                    MessageBox.Show("I resuelto" + parResuleto);
                     break;
                 case (18, 17):
                     parResuleto++;
+                    MessageBox.Show("I resuelto" + parResuleto);
                     break;
                 case (14, 3):
                     parResuleto++;
+                    MessageBox.Show("J resuelto" + parResuleto);
                     break;
                 case (3, 14):
                     parResuleto++;
+                    MessageBox.Show("J resuelto" + parResuleto);
                     break;
                 case (20, 1):
                     parResuleto++;
+                    MessageBox.Show("K resuelto" + parResuleto);
                     break;
                 case (1, 20):
                     parResuleto++;
+                    MessageBox.Show("K resuelto" + parResuleto);
                     break;
                 default:
                     reinicioBotones(a);
@@ -129,7 +151,10 @@ namespace Memorama
 
         private void ganar(int a)
         {
-
+            if (a == 10)
+            {
+                MessageBox.Show("Ganaste" + parResuleto);
+            }
         }
         private void reinicioBotones(int[] a)
         {
@@ -180,13 +205,13 @@ namespace Memorama
                 case 8:
                     b8.Image = null;
                     b8.Text = "8";
-                    b8.AutoSize = false; 
+                    b8.AutoSize = false;
                     b8.Enabled = true;
                     break;
                 case 9:
                     b9.Image = null;
                     b9.Text = "9";
-                    b9.AutoSize = false; 
+                    b9.AutoSize = false;
                     b9.Enabled = true;
                     break;
                 case 10:
@@ -203,14 +228,14 @@ namespace Memorama
                     break;
                 case 12:
                     b12.Image = null;
-                    b12.Text = "12"; 
+                    b12.Text = "12";
                     b12.AutoSize = false;
-                    b12.Enabled = true; 
+                    b12.Enabled = true;
                     break;
                 case 13:
                     b13.Image = null;
                     b13.Text = "13";
-                    b13.AutoSize = false; 
+                    b13.AutoSize = false;
                     b13.Enabled = true;
                     break;
                 case 14:
@@ -377,7 +402,7 @@ namespace Memorama
                     break;
                 case 20:
                     b20.Image = null;
-                    b20.Text = "15";
+                    b20.Text = "20";
                     b20.AutoSize = false;
                     b20.Enabled = true;
                     break;
@@ -393,7 +418,7 @@ namespace Memorama
             this.Close();
         }
 
-       
+
 
         private void recolor(object sender, PaintEventArgs e)
         {
@@ -414,7 +439,7 @@ namespace Memorama
             }
         }
 
-        private void testing_Click(object sender, EventArgs e)
+        private void reset_Click(object sender, EventArgs e)
         {
             b1.Image = null;
             b2.Image = null;
@@ -482,7 +507,7 @@ namespace Memorama
             b1.Enabled = true;
             b2.Enabled = true;
             b3.Enabled = true;
-            b4.Enabled = true;               
+            b4.Enabled = true;
             b5.Enabled = true;
             b6.Enabled = true;
             b7.Enabled = true;
@@ -499,6 +524,16 @@ namespace Memorama
             b18.Enabled = true;
             b19.Enabled = true;
             b20.Enabled = true;
+
+            parResuleto = 0;
+            contMovimiento = 0;
+
+            cronometro.Stop();
+            corriendo = false;
+            tiempoTranscurrido = TimeSpan.Zero;
+            contadorTiempo.Text = "00:00:00";
+            horaInicio = DateTime.Now - tiempoTranscurrido;
+            cronometro.Start();
         }
 
         private void Memorama_Load(object sender, EventArgs e)
@@ -508,189 +543,229 @@ namespace Memorama
             corriendo = true;
         }
 
-        
+
 
         private void b10_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b10.Text = null;
             b10.Image = Properties.Resources.Sora;
             b10.AutoSize = true;
             b10.Enabled = false;
             b10.Paint += new PaintEventHandler(recolor);
+            revPar(10);
         }
 
         private void b9_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b9.Text = null;
             b9.Image = Properties.Resources.Sora;
             b9.AutoSize = true;
             b9.Enabled = false;
             b9.Paint += new PaintEventHandler(recolor);
+            revPar(9);
         }
 
         private void b11_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b11.Text = null;
             b11.Image = Properties.Resources.Aki;
             b11.AutoSize = true;
             b11.Enabled = false;
             b11.Paint += new PaintEventHandler(recolor);
+            revPar(11);
         }
 
         private void b5_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b5.Text = null;
             b5.Image = Properties.Resources.Aki;
             b5.AutoSize = true;
             b5.Enabled = false;
             b5.Paint += new PaintEventHandler(recolor);
+            revPar(5);
         }
 
         private void b13_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b13.Text = null;
             b13.Image = Properties.Resources.AZKi;
             b13.AutoSize = true;
             b13.Enabled = false;
             b13.Paint += new PaintEventHandler(recolor);
+            revPar(13);
         }
 
         private void b12_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b12.Text = null;
             b12.Image = Properties.Resources.AZKi;
             b12.AutoSize = true;
             b12.Enabled = false;
             b12.Paint += new PaintEventHandler(recolor);
+            revPar(12);
         }
 
         private void b2_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b2.Text = null;
             b2.Image = Properties.Resources.Bae;
             b2.AutoSize = true;
             b2.Enabled = false;
             b2.Paint += new PaintEventHandler(recolor);
+            revPar(2);
         }
         private void b15_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b15.Text = null;
             b15.Image = Properties.Resources.Bae;
             b15.AutoSize = true;
             b15.Enabled = false;
             b15.Paint += new PaintEventHandler(recolor);
+            revPar(15);
         }
         private void b4_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b4.Text = null;
             b4.Image = Properties.Resources.Calli;
             b4.AutoSize = true;
             b4.Enabled = false;
             b4.Paint += new PaintEventHandler(recolor);
+            revPar(4);
         }
 
         private void b6_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b6.Text = null;
             b6.Image = Properties.Resources.Calli;
             b6.AutoSize = true;
             b6.Enabled = false;
             b6.Paint += new PaintEventHandler(recolor);
+            revPar(6);
         }
 
         private void b8_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b8.Text = null;
             b8.Image = Properties.Resources.IRyS;
             b8.AutoSize = true;
             b8.Enabled = false;
             b8.Paint += new PaintEventHandler(recolor);
+            revPar(8);
         }
 
         private void b16_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b16.Text = null;
             b16.Image = Properties.Resources.IRyS;
             b16.AutoSize = true;
             b16.Enabled = false;
             b16.Paint += new PaintEventHandler(recolor);
+            revPar(16);
         }
 
         private void b19_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b19.Text = null;
             b19.Image = Properties.Resources.Kiara;
             b19.AutoSize = true;
             b19.Enabled = false;
             b19.Paint += new PaintEventHandler(recolor);
+            revPar(19);
         }
 
         private void b7_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b7.Text = null;
             b7.Image = Properties.Resources.Kiara;
             b7.AutoSize = true;
             b7.Enabled = false;
             b7.Paint += new PaintEventHandler(recolor);
+            revPar(7);
         }
 
         private void b18_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b18.Text = null;
             b18.Image = Properties.Resources.Korone;
             b18.AutoSize = true;
             b18.Enabled = false;
             b18.Paint += new PaintEventHandler(recolor);
+            revPar(18);
         }
 
         private void b17_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b17.Text = null;
             b17.Image = Properties.Resources.Korone;
             b17.AutoSize = true;
             b17.Enabled = false;
             b17.Paint += new PaintEventHandler(recolor);
+            revPar(17);
         }
 
         private void b14_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b14.Text = null;
             b14.Image = Properties.Resources.Ollie;
             b14.AutoSize = true;
             b14.Enabled = false;
             b14.Paint += new PaintEventHandler(recolor);
+            revPar(14);
         }
 
         private void b3_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b3.Text = null;
             b3.Image = Properties.Resources.Ollie;
             b3.AutoSize = true;
             b3.Enabled = false;
             b3.Paint += new PaintEventHandler(recolor);
+            revPar(3);
         }
 
         private void b20_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b20.Text = null;
             b20.Image = Properties.Resources.Risu;
             b20.AutoSize = true;
             b20.Enabled = false;
             b20.Paint += new PaintEventHandler(recolor);
+            revPar(20);
         }
 
         private void b1_Click(object sender, EventArgs e)
         {
+            contMovimiento++;
             b1.Text = null;
             b1.Image = Properties.Resources.Risu;
             b1.TextImageRelation = TextImageRelation.ImageAboveText;
             b1.AutoSize = true;
             b1.Enabled = false;
             b1.Paint += new PaintEventHandler(recolor);
+            revPar(1);
         }
-       
 
-        
+
+
 
         private void botonPausar_Click(object sender, EventArgs e)
         {
@@ -699,11 +774,69 @@ namespace Memorama
                 horaInicio = DateTime.Now - tiempoTranscurrido;
                 cronometro.Start();
                 corriendo = true;
-            } else if (corriendo)
+                pausarBotones(0);
+            }
+            else if (corriendo)
             {
                 cronometro.Stop();
                 corriendo = false;
+                pausarBotones(1);
             }
+        }
+        private void pausarBotones(int num)
+        {
+            switch (num)
+            {
+                case 0:
+                    b1.Enabled = true;
+                    b2.Enabled = true;
+                    b3.Enabled = true;
+                    b4.Enabled = true;
+                    b5.Enabled = true;
+                    b6.Enabled = true;
+                    b7.Enabled = true;
+                    b8.Enabled = true;
+                    b9.Enabled = true;
+                    b10.Enabled = true;
+                    b11.Enabled = true;
+                    b12.Enabled = true;
+                    b13.Enabled = true;
+                    b14.Enabled = true;
+                    b15.Enabled = true;
+                    b16.Enabled = true;
+                    b17.Enabled = true;
+                    b18.Enabled = true;
+                    b19.Enabled = true;
+                    b20.Enabled = true;
+
+                    break;
+                case 1:
+                    b1.Enabled = false;
+                    b2.Enabled = false;
+                    b3.Enabled = false;
+                    b4.Enabled = false;
+                    b5.Enabled = false;
+                    b6.Enabled = false;
+                    b7.Enabled = false;
+                    b8.Enabled = false;
+                    b9.Enabled = false;
+                    b10.Enabled = false;
+                    b11.Enabled = false;
+                    b12.Enabled = false;
+                    b13.Enabled = false;
+                    b14.Enabled = false;
+                    b15.Enabled = false;
+                    b16.Enabled = false;
+                    b17.Enabled = false;
+                    b18.Enabled = false;
+                    b19.Enabled = false;
+                    b20.Enabled = false;
+                    break;
+            }
+        }
+        private void contadorTiempo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
