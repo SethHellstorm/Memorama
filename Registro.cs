@@ -5,11 +5,13 @@ namespace Memorama
 {
     public partial class Registro : Form
     {
-        private static string[] info = new string[3];        
+        private static string[] info = new string[3];
+        string[] memo;
         Memorama mem;
-        public Registro()
+        public Registro(string[] memoria)
         {
             InitializeComponent();
+            memo = memoria;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -22,7 +24,7 @@ namespace Memorama
             info[0] = textoNombre.Text;
             info[1] = textoNickname.Text;
             info[2] = textoEdad.Text;
-            mem = new Memorama(this, info);
+            mem = new Memorama(this, memo,info);
             mem.Show();
             this.Hide();
 

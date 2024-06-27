@@ -12,9 +12,18 @@ namespace Memorama
 {
     public partial class Bienvenida : Form
     {
+        Registro regis;
+        string[] memoriVacia;
         public Bienvenida()
         {
             InitializeComponent();
+        }
+
+        private void bIniciar_Click(object sender, EventArgs e)
+        {
+            regis = new Registro(memoriVacia);
+            regis.Show();
+            this.Hide();
         }
     }
 }

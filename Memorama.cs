@@ -19,7 +19,7 @@ namespace Memorama
         private TimeSpan tiempoTranscurrido;
         private DateTime horaInicio;
         private bool corriendo;
-        private string[] info;
+        private string[] info, memo;
         private int[] par = new int[2];
         private static int conteoSeleccionado = 0, parResuleto = 0,contMovimiento = 0;
         Registro inicio;
@@ -36,12 +36,13 @@ namespace Memorama
             tiempoTranscurrido = DateTime.Now - horaInicio;
             contadorTiempo.Text = tiempoTranscurrido.ToString(@"hh\:mm\:ss");
         }
-        public Memorama(Registro ini, string[] inf)
+        public Memorama(Registro ini, string[] memoria,string[] inf)
         {
             InitializeComponent();
             InicializarCronometro();
             info = inf;
             inicio = ini;
+            memo = memoria;
         }
 
         public void revPar(int a)
