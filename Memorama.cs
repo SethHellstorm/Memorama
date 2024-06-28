@@ -23,6 +23,7 @@ namespace Memorama
         private int[] par = new int[2];
         private static int conteoSeleccionado = 0, parResuleto = 0,contMovimiento = 0;
         private static int[] Aki = new int[2],AZKi = new int[2], Bae = new int[2], Calli = new int[2],IRyS = new int[2],Kiara = new int[2],Korone = new int[2],Ollie = new int[2],Risu = new int[2],Sora = new int[2];
+        private static bool press1, press2, press3, press4,press5, press6, press7, press8, press9, press10, press11, press12, press13, press14, press15, press16, press17, press18, press19, press20;
         private static int[,] lugaresFiguras;
         Registro inicio;
 
@@ -276,120 +277,140 @@ namespace Memorama
                     b1.Text = "1";
                     b1.AutoSize = false;
                     b1.Enabled = true;
+                    press1 = false;
                     break;
                 case 2:
                     b2.Image = null;
                     b2.Text = "2";
                     b2.AutoSize = false;
                     b2.Enabled = true;
+                    press2 = false;
                     break;
                 case 3:
                     b3.Image = null;
                     b3.Text = "3";
                     b3.AutoSize = false;
                     b3.Enabled = true;
+                    press3 = false;
                     break;
                 case 4:
                     b4.Image = null;
                     b4.Text = "4";
                     b4.AutoSize = false;
                     b4.Enabled = true;
+                    press4 = false;
                     break;
                 case 5:
                     b5.Image = null;
                     b5.Text = "5";
                     b5.AutoSize = false;
                     b5.Enabled = true;
+                    press5 = false;
                     break;
                 case 6:
                     b6.Image = null;
                     b6.Text = "6";
                     b6.AutoSize = false;
                     b6.Enabled = true;
+                    press6 = false;
                     break;
                 case 7:
                     b7.Image = null;
                     b7.Text = "7";
                     b7.AutoSize = false;
                     b7.Enabled = true;
+                    press7 = false;
                     break;
                 case 8:
                     b8.Image = null;
                     b8.Text = "8";
                     b8.AutoSize = false;
                     b8.Enabled = true;
+                    press8 = false;
                     break;
                 case 9:
                     b9.Image = null;
                     b9.Text = "9";
                     b9.AutoSize = false;
                     b9.Enabled = true;
+                    press9 = false;
                     break;
                 case 10:
                     b10.Image = null;
                     b10.Text = "10";
                     b10.AutoSize = false;
                     b10.Enabled = true;
+                    press10 = false;
                     break;
                 case 11:
                     b11.Image = null;
                     b11.Text = "11";
                     b11.AutoSize = false;
                     b11.Enabled = true;
+                    press11 = false;
                     break;
                 case 12:
                     b12.Image = null;
                     b12.Text = "12";
                     b12.AutoSize = false;
                     b12.Enabled = true;
+                    press12 = false;
                     break;
                 case 13:
                     b13.Image = null;
                     b13.Text = "13";
                     b13.AutoSize = false;
                     b13.Enabled = true;
+                    press13 = false;
                     break;
                 case 14:
                     b14.Image = null;
                     b14.Text = "14";
                     b14.AutoSize = false;
                     b14.Enabled = true;
+                    press14 = false;
                     break;
                 case 15:
                     b15.Image = null;
                     b15.Text = "15";
                     b15.AutoSize = false;
                     b15.Enabled = true;
+                    press15 = false;
                     break;
                 case 16:
                     b16.Image = null;
                     b16.Text = "16";
                     b16.AutoSize = false;
                     b16.Enabled = true;
+                    press16 = false;
                     break;
                 case 17:
                     b17.Image = null;
                     b17.Text = "17";
                     b17.AutoSize = false;
                     b17.Enabled = true;
+                    press17 = false;
                     break;
                 case 18:
                     b18.Image = null;
                     b18.Text = "18";
                     b18.AutoSize = false;
                     b18.Enabled = true;
+                    press18 = false;
                     break;
                 case 19:
                     b19.Image = null;
                     b19.Text = "19";
                     b19.AutoSize = false;
                     b19.Enabled = true;
+                    press19 = false;
                     break;
                 case 20:
                     b20.Image = null;
                     b20.Text = "15";
                     b20.AutoSize = false;
                     b20.Enabled = true;
+                    press20 = false;
                     break;
                 default:
                     Console.WriteLine("Error critico");
@@ -402,120 +423,140 @@ namespace Memorama
                     b1.Text = "1";
                     b1.AutoSize = false;
                     b1.Enabled = true;
+                    press1 = false;
                     break;
                 case 2:
                     b2.Image = null;
                     b2.Text = "2";
                     b2.AutoSize = false;
                     b2.Enabled = true;
+                    press2 = false;
                     break;
                 case 3:
                     b3.Image = null;
                     b3.Text = "3";
                     b3.AutoSize = false;
                     b3.Enabled = true;
+                    press3 = false;
                     break;
                 case 4:
                     b4.Image = null;
                     b4.Text = "4";
                     b4.AutoSize = false;
                     b4.Enabled = true;
+                    press4 = false;
                     break;
                 case 5:
                     b5.Image = null;
                     b5.Text = "5";
                     b5.AutoSize = false;
                     b5.Enabled = true;
+                    press5 = false;
                     break;
                 case 6:
                     b6.Image = null;
                     b6.Text = "6";
                     b6.AutoSize = false;
                     b6.Enabled = true;
+                    press6 = false;
                     break;
                 case 7:
                     b7.Image = null;
                     b7.Text = "7";
                     b7.AutoSize = false;
                     b7.Enabled = true;
+                    press7 = false;
                     break;
                 case 8:
                     b8.Image = null;
                     b8.Text = "8";
                     b8.AutoSize = false;
                     b8.Enabled = true;
+                    press8 = false;
                     break;
                 case 9:
                     b9.Image = null;
                     b9.Text = "9";
                     b9.AutoSize = false;
                     b9.Enabled = true;
+                    press9 = false;
                     break;
                 case 10:
                     b10.Image = null;
                     b10.Text = "10";
                     b10.AutoSize = false;
                     b10.Enabled = true;
+                    press10 = false;
                     break;
                 case 11:
                     b11.Image = null;
                     b11.Text = "11";
                     b11.AutoSize = false;
                     b11.Enabled = true;
+                    press11 = false;
                     break;
                 case 12:
                     b12.Image = null;
                     b12.Text = "12";
                     b12.AutoSize = false;
                     b12.Enabled = true;
+                    press12 = false;
                     break;
                 case 13:
                     b13.Image = null;
                     b13.Text = "13";
                     b13.AutoSize = false;
                     b13.Enabled = true;
+                    press13 = false;
                     break;
                 case 14:
                     b14.Image = null;
                     b14.Text = "14";
                     b14.AutoSize = false;
                     b14.Enabled = true;
+                    press14 = false;
                     break;
                 case 15:
                     b15.Image = null;
                     b15.Text = "15";
                     b15.AutoSize = false;
                     b15.Enabled = true;
+                    press15 = false;
                     break;
                 case 16:
                     b16.Image = null;
                     b16.Text = "16";
                     b16.AutoSize = false;
                     b16.Enabled = true;
+                    press16 = false;
                     break;
                 case 17:
                     b17.Image = null;
                     b17.Text = "17";
                     b17.AutoSize = false;
                     b17.Enabled = true;
+                    press17 = false;
                     break;
                 case 18:
                     b18.Image = null;
                     b18.Text = "18";
                     b18.AutoSize = false;
                     b18.Enabled = true;
+                    press18 = false;
                     break;
                 case 19:
                     b19.Image = null;
                     b19.Text = "19";
                     b19.AutoSize = false;
                     b19.Enabled = true;
+                    press19 = false;
                     break;
                 case 20:
                     b20.Image = null;
-                    b20.Text = "20";
+                    b20.Text = "15";
                     b20.AutoSize = false;
                     b20.Enabled = true;
+                    press20 = false;
                     break;
                 default:
                     Console.WriteLine("Error critico");
@@ -635,6 +676,27 @@ namespace Memorama
             b18.Enabled = true;
             b19.Enabled = true;
             b20.Enabled = true;
+            
+            press1 = false;
+            press2 = false;
+            press3 = false;
+            press4 = false;
+            press5 = false;
+            press6 = false;
+            press7 = false;
+            press8 = false;
+            press9 = false;
+            press10 = false;
+            press11 = false;
+            press12 = false;
+            press13 = false;
+            press14 = false;
+            press15 = false;
+            press16 = false;
+            press17 = false;
+            press18 = false;
+            press19 = false;
+            press20 = false;
 
             parResuleto = 0;
             contMovimiento = 0;
@@ -666,6 +728,7 @@ namespace Memorama
             b10.AutoSize = true;
             b10.Enabled = false;
             b10.Paint += new PaintEventHandler(recolor);
+            press10 = true;
             revPar(10);
         }
 
@@ -677,6 +740,7 @@ namespace Memorama
             b9.AutoSize = true;
             b9.Enabled = false;
             b9.Paint += new PaintEventHandler(recolor);
+            press9 = true;
             revPar(9);
         }
 
@@ -688,6 +752,7 @@ namespace Memorama
             b11.AutoSize = true;
             b11.Enabled = false;
             b11.Paint += new PaintEventHandler(recolor);
+            press11 = true;
             revPar(11);
         }
 
@@ -699,6 +764,7 @@ namespace Memorama
             b5.AutoSize = true;
             b5.Enabled = false;
             b5.Paint += new PaintEventHandler(recolor);
+            press5 = true;
             revPar(5);
         }
 
@@ -710,6 +776,7 @@ namespace Memorama
             b13.AutoSize = true;
             b13.Enabled = false;
             b13.Paint += new PaintEventHandler(recolor);
+            press13 = true;
             revPar(13);
         }
 
@@ -721,6 +788,7 @@ namespace Memorama
             b12.AutoSize = true;
             b12.Enabled = false;
             b12.Paint += new PaintEventHandler(recolor);
+            press12 = true;
             revPar(12);
         }
 
@@ -732,6 +800,7 @@ namespace Memorama
             b2.AutoSize = true;
             b2.Enabled = false;
             b2.Paint += new PaintEventHandler(recolor);
+            press2 = true;
             revPar(2);
         }
         private void b15_Click(object sender, EventArgs e)
@@ -742,6 +811,7 @@ namespace Memorama
             b15.AutoSize = true;
             b15.Enabled = false;
             b15.Paint += new PaintEventHandler(recolor);
+            press15 = true;
             revPar(15);
         }
         private void b4_Click(object sender, EventArgs e)
@@ -752,6 +822,7 @@ namespace Memorama
             b4.AutoSize = true;
             b4.Enabled = false;
             b4.Paint += new PaintEventHandler(recolor);
+            press4 = true;
             revPar(4);
         }
 
@@ -763,6 +834,7 @@ namespace Memorama
             b6.AutoSize = true;
             b6.Enabled = false;
             b6.Paint += new PaintEventHandler(recolor);
+            press6 = true;
             revPar(6);
         }
 
@@ -774,6 +846,7 @@ namespace Memorama
             b8.AutoSize = true;
             b8.Enabled = false;
             b8.Paint += new PaintEventHandler(recolor);
+            press8 = true;
             revPar(8);
         }
 
@@ -785,6 +858,7 @@ namespace Memorama
             b16.AutoSize = true;
             b16.Enabled = false;
             b16.Paint += new PaintEventHandler(recolor);
+            press16 = true;
             revPar(16);
         }
 
@@ -796,6 +870,7 @@ namespace Memorama
             b19.AutoSize = true;
             b19.Enabled = false;
             b19.Paint += new PaintEventHandler(recolor);
+            press19 = true;
             revPar(19);
         }
 
@@ -807,6 +882,7 @@ namespace Memorama
             b7.AutoSize = true;
             b7.Enabled = false;
             b7.Paint += new PaintEventHandler(recolor);
+            press7 = true;
             revPar(7);
         }
 
@@ -818,6 +894,7 @@ namespace Memorama
             b18.AutoSize = true;
             b18.Enabled = false;
             b18.Paint += new PaintEventHandler(recolor);
+            press18 = true;
             revPar(18);
         }
 
@@ -829,6 +906,7 @@ namespace Memorama
             b17.AutoSize = true;
             b17.Enabled = false;
             b17.Paint += new PaintEventHandler(recolor);
+            press17 = true;
             revPar(17);
         }
 
@@ -840,6 +918,7 @@ namespace Memorama
             b14.AutoSize = true;
             b14.Enabled = false;
             b14.Paint += new PaintEventHandler(recolor);
+            press14 = true;
             revPar(14);
         }
 
@@ -851,6 +930,7 @@ namespace Memorama
             b3.AutoSize = true;
             b3.Enabled = false;
             b3.Paint += new PaintEventHandler(recolor);
+            press3 = true;
             revPar(3);
         }
 
@@ -862,6 +942,7 @@ namespace Memorama
             b20.AutoSize = true;
             b20.Enabled = false;
             b20.Paint += new PaintEventHandler(recolor);
+            press20 = true;
             revPar(20);
         }
 
@@ -874,6 +955,7 @@ namespace Memorama
             b1.AutoSize = true;
             b1.Enabled = false;
             b1.Paint += new PaintEventHandler(recolor);
+            press1 = true;
             revPar(1);
         }
 
@@ -898,26 +980,46 @@ namespace Memorama
             switch (num)
             {
                 case 0:
-                    b1.Enabled = true;
-                    b2.Enabled = true;
-                    b3.Enabled = true;
-                    b4.Enabled = true;
-                    b5.Enabled = true;
-                    b6.Enabled = true;
-                    b7.Enabled = true;
-                    b8.Enabled = true;
-                    b9.Enabled = true;
-                    b10.Enabled = true;
-                    b11.Enabled = true;
-                    b12.Enabled = true;
-                    b13.Enabled = true;
-                    b14.Enabled = true;
-                    b15.Enabled = true;
-                    b16.Enabled = true;
-                    b17.Enabled = true;
-                    b18.Enabled = true;
-                    b19.Enabled = true;
-                    b20.Enabled = true;
+                    if (!press1)
+                        b1.Enabled = true;
+                    if (!press2)
+                        b2.Enabled = true;
+                    if (!press3)
+                        b3.Enabled = true;
+                    if (!press4)
+                        b4.Enabled = true;
+                    if (!press5)
+                        b5.Enabled = true;
+                    if (!press6)
+                        b6.Enabled = true;
+                    if (!press7)
+                        b7.Enabled = true;
+                    if (!press8)
+                        b8.Enabled = true;
+                    if (!press9)
+                        b9.Enabled = true;
+                    if (!press10)
+                        b10.Enabled = true;
+                    if (!press11)
+                        b11.Enabled = true;
+                    if (!press12)
+                        b12.Enabled = true;
+                    if (!press13)
+                        b13.Enabled = true;
+                    if (!press14)
+                        b14.Enabled = true;
+                    if (!press15)
+                        b15.Enabled = true;
+                    if (!press16)
+                        b16.Enabled = true;
+                    if (!press17)
+                        b17.Enabled = true;
+                    if (!press18)
+                        b18.Enabled = true;
+                    if (!press19)
+                        b19.Enabled = true;
+                    if (!press20)
+                        b20.Enabled = true;
 
                     break;
                 case 1:
