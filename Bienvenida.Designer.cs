@@ -35,17 +35,19 @@
             // anuncioBienvenida
             // 
             anuncioBienvenida.AutoSize = true;
-            anuncioBienvenida.Location = new Point(310, 98);
+            anuncioBienvenida.Location = new Point(443, 163);
+            anuncioBienvenida.Margin = new Padding(4, 0, 4, 0);
             anuncioBienvenida.Name = "anuncioBienvenida";
-            anuncioBienvenida.Size = new Size(143, 15);
+            anuncioBienvenida.Size = new Size(214, 25);
             anuncioBienvenida.TabIndex = 0;
             anuncioBienvenida.Text = "Bienvenido al memorama";
             // 
             // bIniciar
             // 
-            bIniciar.Location = new Point(334, 186);
+            bIniciar.Location = new Point(477, 310);
+            bIniciar.Margin = new Padding(4, 5, 4, 5);
             bIniciar.Name = "bIniciar";
-            bIniciar.Size = new Size(75, 23);
+            bIniciar.Size = new Size(107, 38);
             bIniciar.TabIndex = 1;
             bIniciar.Text = "Iniciar";
             bIniciar.UseVisualStyleBackColor = true;
@@ -53,14 +55,16 @@
             // 
             // Bienvenida
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1143, 750);
             Controls.Add(bIniciar);
             Controls.Add(anuncioBienvenida);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Bienvenida";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Bienvenida";
+            Load += Bienvenida_Load;
             ResumeLayout(false);
             PerformLayout();
         }

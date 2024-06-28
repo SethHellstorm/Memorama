@@ -13,7 +13,7 @@ namespace Memorama
     public partial class Bienvenida : Form
     {
         Registro regis;
-        string[,] memoriaInicial = new string[5,5];
+        string[,] memoriaInicial = new string[5, 5];
 
         public Bienvenida()
         {
@@ -55,6 +55,11 @@ namespace Memorama
             regis = new Registro(memoriaInicial);
             regis.Show();
             this.Hide();
+        }
+
+        private void Bienvenida_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
