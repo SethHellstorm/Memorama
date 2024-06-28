@@ -254,7 +254,8 @@ namespace Memorama
                 MessageBox.Show("K resuelto" + parResuleto);
             }
             else {
-                reinicioBotones(a);
+                reinicioBotones(p1);
+                reinicioBotones(p2);
             }
                 
             
@@ -268,155 +269,9 @@ namespace Memorama
                 MessageBox.Show("Ganaste" + parResuleto);
             }
         }
-        private void reinicioBotones(int[] a)
+        private void reinicioBotones(int a)
         {
-            switch (a[0])
-            {
-                case 1:
-                    b1.Image = null;
-                    b1.Text = "1";
-                    b1.AutoSize = false;
-                    b1.Enabled = true;
-                    press1 = false;
-                    break;
-                case 2:
-                    b2.Image = null;
-                    b2.Text = "2";
-                    b2.AutoSize = false;
-                    b2.Enabled = true;
-                    press2 = false;
-                    break;
-                case 3:
-                    b3.Image = null;
-                    b3.Text = "3";
-                    b3.AutoSize = false;
-                    b3.Enabled = true;
-                    press3 = false;
-                    break;
-                case 4:
-                    b4.Image = null;
-                    b4.Text = "4";
-                    b4.AutoSize = false;
-                    b4.Enabled = true;
-                    press4 = false;
-                    break;
-                case 5:
-                    b5.Image = null;
-                    b5.Text = "5";
-                    b5.AutoSize = false;
-                    b5.Enabled = true;
-                    press5 = false;
-                    break;
-                case 6:
-                    b6.Image = null;
-                    b6.Text = "6";
-                    b6.AutoSize = false;
-                    b6.Enabled = true;
-                    press6 = false;
-                    break;
-                case 7:
-                    b7.Image = null;
-                    b7.Text = "7";
-                    b7.AutoSize = false;
-                    b7.Enabled = true;
-                    press7 = false;
-                    break;
-                case 8:
-                    b8.Image = null;
-                    b8.Text = "8";
-                    b8.AutoSize = false;
-                    b8.Enabled = true;
-                    press8 = false;
-                    break;
-                case 9:
-                    b9.Image = null;
-                    b9.Text = "9";
-                    b9.AutoSize = false;
-                    b9.Enabled = true;
-                    press9 = false;
-                    break;
-                case 10:
-                    b10.Image = null;
-                    b10.Text = "10";
-                    b10.AutoSize = false;
-                    b10.Enabled = true;
-                    press10 = false;
-                    break;
-                case 11:
-                    b11.Image = null;
-                    b11.Text = "11";
-                    b11.AutoSize = false;
-                    b11.Enabled = true;
-                    press11 = false;
-                    break;
-                case 12:
-                    b12.Image = null;
-                    b12.Text = "12";
-                    b12.AutoSize = false;
-                    b12.Enabled = true;
-                    press12 = false;
-                    break;
-                case 13:
-                    b13.Image = null;
-                    b13.Text = "13";
-                    b13.AutoSize = false;
-                    b13.Enabled = true;
-                    press13 = false;
-                    break;
-                case 14:
-                    b14.Image = null;
-                    b14.Text = "14";
-                    b14.AutoSize = false;
-                    b14.Enabled = true;
-                    press14 = false;
-                    break;
-                case 15:
-                    b15.Image = null;
-                    b15.Text = "15";
-                    b15.AutoSize = false;
-                    b15.Enabled = true;
-                    press15 = false;
-                    break;
-                case 16:
-                    b16.Image = null;
-                    b16.Text = "16";
-                    b16.AutoSize = false;
-                    b16.Enabled = true;
-                    press16 = false;
-                    break;
-                case 17:
-                    b17.Image = null;
-                    b17.Text = "17";
-                    b17.AutoSize = false;
-                    b17.Enabled = true;
-                    press17 = false;
-                    break;
-                case 18:
-                    b18.Image = null;
-                    b18.Text = "18";
-                    b18.AutoSize = false;
-                    b18.Enabled = true;
-                    press18 = false;
-                    break;
-                case 19:
-                    b19.Image = null;
-                    b19.Text = "19";
-                    b19.AutoSize = false;
-                    b19.Enabled = true;
-                    press19 = false;
-                    break;
-                case 20:
-                    b20.Image = null;
-                    b20.Text = "15";
-                    b20.AutoSize = false;
-                    b20.Enabled = true;
-                    press20 = false;
-                    break;
-                default:
-                    Console.WriteLine("Error critico");
-                    break;
-            }
-            switch (a[1])
+            switch (a)
             {
                 case 1:
                     b1.Image = null;
