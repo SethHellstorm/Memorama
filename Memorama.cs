@@ -22,7 +22,113 @@ namespace Memorama
         private string[] info, memo;
         private int[] par = new int[2];
         private static int conteoSeleccionado = 0, parResuleto = 0,contMovimiento = 0;
+        private static int[] Aki = new int[2],AZKi = new int[2], Bae = new int[2], Calli = new int[2],IRyS = new int[2],Kiara = new int[2],Korone = new int[2],Ollie = new int[2],Risu = new int[2],Sora = new int[2];
+        private static int[,] lugaresFiguras;
         Registro inicio;
+
+        private Image darImagen(int a)
+        {
+            if(a == Aki[0] ||  a == Aki[1])
+            {
+                return Properties.Resources.Aki;
+            }
+            if (a == AZKi[0] || a == AZKi[1])
+            {
+                return Properties.Resources.AZKi;
+            }
+            if (a == Bae[0] || a == Bae[1])
+            {
+                return Properties.Resources.Bae;
+            }
+            if (a == Calli[0] || a == Calli[1])
+            {
+                return Properties.Resources.Calli;
+            }
+            if (a == IRyS[0] || a == IRyS[1])
+            {
+                return Properties.Resources.IRyS;
+            }
+            if (a == Kiara[0] || a == Kiara[1])
+            {
+                return Properties.Resources.Kiara;
+            }
+            if (a == Korone[0] || a == Korone[1])
+            {
+                return Properties.Resources.Korone;
+            }
+            if (a == Ollie[0] || a == Ollie[1])
+            {
+                return Properties.Resources.Ollie;
+            }
+            if (a == Risu[0] || a == Risu[1])
+            {
+                return Properties.Resources.Risu;
+            }
+            if (a == Sora[0] || a == Sora[1])
+            {
+                return Properties.Resources.Sora;
+            }
+            return null;
+        }
+        private void generarLugares()
+        {
+            int[] numeros = new int[20];
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                numeros[i] = i + 1;
+            }
+
+            // Barajar el array
+            Random rng = new Random();
+            int n = numeros.Length;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                int value = numeros[k];
+                numeros[k] = numeros[n];
+                numeros[n] = value;
+            }
+
+            // Crear un array bidimensional de 2x10
+            int[,] arregloPosiciones = new int[10, 2];
+            for (int i = 0; i < 20; i++)
+            {
+                arregloPosiciones[ i % 10, i / 10] = numeros[i];
+            }
+
+            Aki[0] = arregloPosiciones[0,0];
+            Aki[1] = arregloPosiciones[0,1];
+
+            AZKi[0] = arregloPosiciones[1,0];
+            AZKi[1] = arregloPosiciones[1,1];
+
+            Bae[0] = arregloPosiciones[2,0];
+            Bae[1] = arregloPosiciones [2,1];
+
+            Calli[0] = arregloPosiciones[3,0];
+            Calli[1] = arregloPosiciones[3,1];
+
+            IRyS[0] = arregloPosiciones[4,0];
+            IRyS[1] = arregloPosiciones[4, 1];
+
+            Kiara[0] = arregloPosiciones[5, 0];
+            Kiara[1] = arregloPosiciones[5, 1];
+
+            Korone[0] = arregloPosiciones[6, 0];
+            Korone[1] = arregloPosiciones[6, 1];
+
+            Ollie[0] = arregloPosiciones[7, 0];
+            Ollie[1] = arregloPosiciones[7, 1];
+
+            Risu[0] = arregloPosiciones[8, 0];
+            Risu[1] = arregloPosiciones[8, 1];
+
+            Sora[0] = arregloPosiciones[9, 0];
+            Sora[1] = arregloPosiciones[9, 1];
+
+        }
+    
 
         private void InicializarCronometro()
         {
@@ -61,92 +167,96 @@ namespace Memorama
         public void parConteo(int[] a)
         {
             int p1 = a[0], p2 = a[1];
-            switch ((p1, p2))
+
+            if (p1 == Aki[0] && p2 == Aki[1])
             {
-                case (10, 9):
-                    parResuleto++;
-                    MessageBox.Show("A resuelto" + parResuleto);
-                    break;
-                case (9, 10):
-                    parResuleto++;
-                    MessageBox.Show("A resuelto" + parResuleto);
-                    break;
-                case (11, 5):
-                    parResuleto++;
-                    MessageBox.Show("B resuelto" + parResuleto);
-                    break;
-                case (5, 11):
-                    parResuleto++;
-                    MessageBox.Show("B resuelto" + parResuleto);
-                    break;
-                case (13, 12):
-                    parResuleto++;
-                    MessageBox.Show("C resuelto" + parResuleto);
-                    break;
-                case (12, 13):
-                    parResuleto++;
-                    MessageBox.Show("C resuelto" + parResuleto);
-                    break;
-                case (2, 15):
-                    parResuleto++;
-                    MessageBox.Show("D resuelto" + parResuleto);
-                    break;
-                case (15, 2):
-                    parResuleto++;
-                    MessageBox.Show("D resuelto" + parResuleto);
-                    break;
-                case (4, 6):
-                    parResuleto++;
-                    MessageBox.Show("E resuelto" + parResuleto);
-                    break;
-                case (6, 4):
-                    parResuleto++;
-                    MessageBox.Show("E resuelto" + parResuleto);
-                    break;
-                case (8, 16):
-                    parResuleto++;
-                    MessageBox.Show("F resuelto" + parResuleto);
-                    break;
-                case (16, 8):
-                    parResuleto++;
-                    MessageBox.Show("F resuelto" + parResuleto);
-                    break;
-                case (19, 7):
-                    parResuleto++;
-                    MessageBox.Show("G resuelto" + parResuleto);
-                    break;
-                case (7, 19):
-                    parResuleto++;
-                    MessageBox.Show("G resuelto" + parResuleto);
-                    break;
-                case (17, 18):
-                    parResuleto++;
-                    MessageBox.Show("I resuelto" + parResuleto);
-                    break;
-                case (18, 17):
-                    parResuleto++;
-                    MessageBox.Show("I resuelto" + parResuleto);
-                    break;
-                case (14, 3):
-                    parResuleto++;
-                    MessageBox.Show("J resuelto" + parResuleto);
-                    break;
-                case (3, 14):
-                    parResuleto++;
-                    MessageBox.Show("J resuelto" + parResuleto);
-                    break;
-                case (20, 1):
-                    parResuleto++;
-                    MessageBox.Show("K resuelto" + parResuleto);
-                    break;
-                case (1, 20):
-                    parResuleto++;
-                    MessageBox.Show("K resuelto" + parResuleto);
-                    break;
-                default:
-                    reinicioBotones(a);
-                    break;
+                parResuleto++;
+                MessageBox.Show("A resuelto" + parResuleto);
             }
+            else if (p1 == Aki[1] && p2 == Aki[0])
+            {
+                parResuleto++;
+                MessageBox.Show("A resuelto" + parResuleto);
+            }
+            else if (p1 == AZKi[0] && p2 == AZKi[1])
+            {
+                parResuleto++;
+                MessageBox.Show("B resuelto" + parResuleto);
+            }
+            else if (p1 == AZKi[1] && p2 == AZKi[0])
+            {
+                parResuleto++;
+                MessageBox.Show("B resuelto" + parResuleto);
+            } else if (p1 == Bae[0] && p2 == Bae[1])
+            {
+                parResuleto++;
+                MessageBox.Show("C resuelto" + parResuleto);
+            } else if (p1 == Bae[1] && p2 == Bae[0])
+            {
+                parResuleto++;
+                MessageBox.Show("C resuelto" + parResuleto);
+            } else if (p1 == Calli[0] && p2 == Calli[1])
+            {
+                parResuleto++;
+                MessageBox.Show("D resuelto" + parResuleto);
+            } else if (p1 == Calli[1] && p2 == Calli[0])
+            {
+                parResuleto++;
+                MessageBox.Show("D resuelto" + parResuleto);
+            } else if (p1 == IRyS[0] && p2 == IRyS[1])
+            {
+                parResuleto++;
+                MessageBox.Show("E resuelto" + parResuleto);
+            } else if (p1 == IRyS[1] && p2 == IRyS[0])
+            {
+                parResuleto++;
+                MessageBox.Show("E resuelto" + parResuleto);
+            } else if (p1 == Kiara[0] && p2 == Kiara[1])
+            {
+                parResuleto++;
+                MessageBox.Show("F resuelto" + parResuleto);
+            } else if (p1 == Kiara[1] && p2 == Kiara[0])
+            {
+                parResuleto++;
+                MessageBox.Show("F resuelto" + parResuleto);
+            } else if (p1 == Korone[0] && p2 == Korone[1])
+            {
+                parResuleto++;
+                MessageBox.Show("G resuelto" + parResuleto);
+            } else if (p1 == Korone[1] && p2 == Korone[0])
+            {
+                parResuleto++;
+                MessageBox.Show("G resuelto" + parResuleto);
+            } else if (p1 == Ollie[0] && p2 == Ollie[1])
+            {
+                parResuleto++;
+                MessageBox.Show("I resuelto" + parResuleto);
+            } else if (p1 == Ollie[1] && p2 == Ollie[0])
+            {
+                parResuleto++;
+                MessageBox.Show("I resuelto" + parResuleto);
+            } else if (p1 == Risu[0] && p2 == Risu[1])
+            {
+                parResuleto++;
+                MessageBox.Show("J resuelto" + parResuleto);
+            } else if (p1 == Risu[1] && p2 == Risu[0])
+            {
+                parResuleto++;
+                MessageBox.Show("J resuelto" + parResuleto);
+            } else if (p1 == Sora[0] && p2 == Sora[1])
+            {
+                parResuleto++;
+                MessageBox.Show("K resuelto" + parResuleto);
+            } else if (p1 == Sora[1] && p2 == Sora[0])
+            {
+                parResuleto++;
+                MessageBox.Show("K resuelto" + parResuleto);
+            }
+            else {
+                reinicioBotones(a);
+            }
+                
+            
             ganar(parResuleto);
         }
 
@@ -542,6 +652,8 @@ namespace Memorama
             horaInicio = DateTime.Now - tiempoTranscurrido;
             cronometro.Start();
             corriendo = true;
+
+            generarLugares();
         }
 
 
@@ -550,7 +662,7 @@ namespace Memorama
         {
             contMovimiento++;
             b10.Text = null;
-            b10.Image = Properties.Resources.Sora;
+            b10.Image = darImagen(10);
             b10.AutoSize = true;
             b10.Enabled = false;
             b10.Paint += new PaintEventHandler(recolor);
@@ -561,7 +673,7 @@ namespace Memorama
         {
             contMovimiento++;
             b9.Text = null;
-            b9.Image = Properties.Resources.Sora;
+            b9.Image = darImagen(9);
             b9.AutoSize = true;
             b9.Enabled = false;
             b9.Paint += new PaintEventHandler(recolor);
@@ -572,7 +684,7 @@ namespace Memorama
         {
             contMovimiento++;
             b11.Text = null;
-            b11.Image = Properties.Resources.Aki;
+            b11.Image = darImagen(11);
             b11.AutoSize = true;
             b11.Enabled = false;
             b11.Paint += new PaintEventHandler(recolor);
@@ -583,7 +695,7 @@ namespace Memorama
         {
             contMovimiento++;
             b5.Text = null;
-            b5.Image = Properties.Resources.Aki;
+            b5.Image = darImagen(5);
             b5.AutoSize = true;
             b5.Enabled = false;
             b5.Paint += new PaintEventHandler(recolor);
@@ -594,7 +706,7 @@ namespace Memorama
         {
             contMovimiento++;
             b13.Text = null;
-            b13.Image = Properties.Resources.AZKi;
+            b13.Image = darImagen(13);
             b13.AutoSize = true;
             b13.Enabled = false;
             b13.Paint += new PaintEventHandler(recolor);
@@ -605,7 +717,7 @@ namespace Memorama
         {
             contMovimiento++;
             b12.Text = null;
-            b12.Image = Properties.Resources.AZKi;
+            b12.Image = darImagen(12);
             b12.AutoSize = true;
             b12.Enabled = false;
             b12.Paint += new PaintEventHandler(recolor);
@@ -616,7 +728,7 @@ namespace Memorama
         {
             contMovimiento++;
             b2.Text = null;
-            b2.Image = Properties.Resources.Bae;
+            b2.Image = darImagen(2);
             b2.AutoSize = true;
             b2.Enabled = false;
             b2.Paint += new PaintEventHandler(recolor);
@@ -626,7 +738,7 @@ namespace Memorama
         {
             contMovimiento++;
             b15.Text = null;
-            b15.Image = Properties.Resources.Bae;
+            b15.Image = darImagen(15);
             b15.AutoSize = true;
             b15.Enabled = false;
             b15.Paint += new PaintEventHandler(recolor);
@@ -636,7 +748,7 @@ namespace Memorama
         {
             contMovimiento++;
             b4.Text = null;
-            b4.Image = Properties.Resources.Calli;
+            b4.Image = darImagen(4);
             b4.AutoSize = true;
             b4.Enabled = false;
             b4.Paint += new PaintEventHandler(recolor);
@@ -647,7 +759,7 @@ namespace Memorama
         {
             contMovimiento++;
             b6.Text = null;
-            b6.Image = Properties.Resources.Calli;
+            b6.Image = darImagen(6);
             b6.AutoSize = true;
             b6.Enabled = false;
             b6.Paint += new PaintEventHandler(recolor);
@@ -658,7 +770,7 @@ namespace Memorama
         {
             contMovimiento++;
             b8.Text = null;
-            b8.Image = Properties.Resources.IRyS;
+            b8.Image = darImagen(8);
             b8.AutoSize = true;
             b8.Enabled = false;
             b8.Paint += new PaintEventHandler(recolor);
@@ -669,7 +781,7 @@ namespace Memorama
         {
             contMovimiento++;
             b16.Text = null;
-            b16.Image = Properties.Resources.IRyS;
+            b16.Image = darImagen(16);
             b16.AutoSize = true;
             b16.Enabled = false;
             b16.Paint += new PaintEventHandler(recolor);
@@ -680,7 +792,7 @@ namespace Memorama
         {
             contMovimiento++;
             b19.Text = null;
-            b19.Image = Properties.Resources.Kiara;
+            b19.Image = darImagen(19);
             b19.AutoSize = true;
             b19.Enabled = false;
             b19.Paint += new PaintEventHandler(recolor);
@@ -691,7 +803,7 @@ namespace Memorama
         {
             contMovimiento++;
             b7.Text = null;
-            b7.Image = Properties.Resources.Kiara;
+            b7.Image = darImagen(7);
             b7.AutoSize = true;
             b7.Enabled = false;
             b7.Paint += new PaintEventHandler(recolor);
@@ -702,7 +814,7 @@ namespace Memorama
         {
             contMovimiento++;
             b18.Text = null;
-            b18.Image = Properties.Resources.Korone;
+            b18.Image = darImagen(18);
             b18.AutoSize = true;
             b18.Enabled = false;
             b18.Paint += new PaintEventHandler(recolor);
@@ -713,7 +825,7 @@ namespace Memorama
         {
             contMovimiento++;
             b17.Text = null;
-            b17.Image = Properties.Resources.Korone;
+            b17.Image = darImagen(17);
             b17.AutoSize = true;
             b17.Enabled = false;
             b17.Paint += new PaintEventHandler(recolor);
@@ -724,7 +836,7 @@ namespace Memorama
         {
             contMovimiento++;
             b14.Text = null;
-            b14.Image = Properties.Resources.Ollie;
+            b14.Image = darImagen(14);
             b14.AutoSize = true;
             b14.Enabled = false;
             b14.Paint += new PaintEventHandler(recolor);
@@ -735,7 +847,7 @@ namespace Memorama
         {
             contMovimiento++;
             b3.Text = null;
-            b3.Image = Properties.Resources.Ollie;
+            b3.Image = darImagen(3);
             b3.AutoSize = true;
             b3.Enabled = false;
             b3.Paint += new PaintEventHandler(recolor);
@@ -746,7 +858,7 @@ namespace Memorama
         {
             contMovimiento++;
             b20.Text = null;
-            b20.Image = Properties.Resources.Risu;
+            b20.Image = darImagen(20);
             b20.AutoSize = true;
             b20.Enabled = false;
             b20.Paint += new PaintEventHandler(recolor);
@@ -757,16 +869,13 @@ namespace Memorama
         {
             contMovimiento++;
             b1.Text = null;
-            b1.Image = Properties.Resources.Risu;
+            b1.Image = darImagen(1);
             b1.TextImageRelation = TextImageRelation.ImageAboveText;
             b1.AutoSize = true;
             b1.Enabled = false;
             b1.Paint += new PaintEventHandler(recolor);
             revPar(1);
         }
-
-
-
 
         private void botonPausar_Click(object sender, EventArgs e)
         {
