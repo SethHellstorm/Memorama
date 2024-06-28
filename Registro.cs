@@ -6,9 +6,9 @@ namespace Memorama
     public partial class Registro : Form
     {
         private static string[] info = new string[3];
-        string[] memo;
+        string[,] memo;
         Memorama mem;
-        public Registro(string[] memoria)
+        public Registro(string[,] memoria)
         {
             InitializeComponent();
             memo = memoria;

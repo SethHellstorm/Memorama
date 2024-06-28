@@ -15,16 +15,19 @@ namespace Memorama
 {
     public partial class Memorama : Form
     {
+        private Tablero_de_lideres tabLid;
         private System.Windows.Forms.Timer cronometro;
         private TimeSpan tiempoTranscurrido;
         private DateTime horaInicio;
         private bool corriendo;
-        private string[] info, memo;
+        private string[] info;
+        private string[,] memo;
         private int[] par = new int[2];
         private static int conteoSeleccionado = 0, parResuleto = 0,contMovimiento = 0;
         private static int[] Aki = new int[2],AZKi = new int[2], Bae = new int[2], Calli = new int[2],IRyS = new int[2],Kiara = new int[2],Korone = new int[2],Ollie = new int[2],Risu = new int[2],Sora = new int[2];
         private static bool press1, press2, press3, press4,press5, press6, press7, press8, press9, press10, press11, press12, press13, press14, press15, press16, press17, press18, press19, press20;
         private static int[,] lugaresFiguras;
+        private string[] info2 = new string[2];
         Registro inicio;
 
         private Image darImagen(int a)
@@ -143,7 +146,7 @@ namespace Memorama
             tiempoTranscurrido = DateTime.Now - horaInicio;
             contadorTiempo.Text = tiempoTranscurrido.ToString(@"hh\:mm\:ss");
         }
-        public Memorama(Registro ini, string[] memoria,string[] inf)
+        public Memorama(Registro ini, string[,] memoria,string[] inf)
         {
             InitializeComponent();
             InicializarCronometro();
@@ -172,88 +175,89 @@ namespace Memorama
             if (p1 == Aki[0] && p2 == Aki[1])
             {
                 parResuleto++;
-                MessageBox.Show("A resuelto" + parResuleto);
+                
             }
             else if (p1 == Aki[1] && p2 == Aki[0])
             {
                 parResuleto++;
-                MessageBox.Show("A resuelto" + parResuleto);
+                
             }
             else if (p1 == AZKi[0] && p2 == AZKi[1])
             {
                 parResuleto++;
-                MessageBox.Show("B resuelto" + parResuleto);
+                
             }
             else if (p1 == AZKi[1] && p2 == AZKi[0])
             {
                 parResuleto++;
-                MessageBox.Show("B resuelto" + parResuleto);
+                
             } else if (p1 == Bae[0] && p2 == Bae[1])
             {
                 parResuleto++;
-                MessageBox.Show("C resuelto" + parResuleto);
+                
             } else if (p1 == Bae[1] && p2 == Bae[0])
             {
                 parResuleto++;
-                MessageBox.Show("C resuelto" + parResuleto);
+                
             } else if (p1 == Calli[0] && p2 == Calli[1])
             {
                 parResuleto++;
-                MessageBox.Show("D resuelto" + parResuleto);
+                
             } else if (p1 == Calli[1] && p2 == Calli[0])
             {
                 parResuleto++;
-                MessageBox.Show("D resuelto" + parResuleto);
+                
             } else if (p1 == IRyS[0] && p2 == IRyS[1])
             {
                 parResuleto++;
-                MessageBox.Show("E resuelto" + parResuleto);
+               
             } else if (p1 == IRyS[1] && p2 == IRyS[0])
             {
                 parResuleto++;
-                MessageBox.Show("E resuelto" + parResuleto);
+                
             } else if (p1 == Kiara[0] && p2 == Kiara[1])
             {
                 parResuleto++;
-                MessageBox.Show("F resuelto" + parResuleto);
+                
             } else if (p1 == Kiara[1] && p2 == Kiara[0])
             {
                 parResuleto++;
-                MessageBox.Show("F resuelto" + parResuleto);
+                
             } else if (p1 == Korone[0] && p2 == Korone[1])
             {
                 parResuleto++;
-                MessageBox.Show("G resuelto" + parResuleto);
+                
             } else if (p1 == Korone[1] && p2 == Korone[0])
             {
                 parResuleto++;
-                MessageBox.Show("G resuelto" + parResuleto);
+                
             } else if (p1 == Ollie[0] && p2 == Ollie[1])
             {
                 parResuleto++;
-                MessageBox.Show("I resuelto" + parResuleto);
+               
             } else if (p1 == Ollie[1] && p2 == Ollie[0])
             {
                 parResuleto++;
-                MessageBox.Show("I resuelto" + parResuleto);
+              
             } else if (p1 == Risu[0] && p2 == Risu[1])
             {
                 parResuleto++;
-                MessageBox.Show("J resuelto" + parResuleto);
+             
             } else if (p1 == Risu[1] && p2 == Risu[0])
             {
                 parResuleto++;
-                MessageBox.Show("J resuelto" + parResuleto);
+               
             } else if (p1 == Sora[0] && p2 == Sora[1])
             {
                 parResuleto++;
-                MessageBox.Show("K resuelto" + parResuleto);
+                
             } else if (p1 == Sora[1] && p2 == Sora[0])
             {
                 parResuleto++;
-                MessageBox.Show("K resuelto" + parResuleto);
+                
             }
             else {
+                MessageBox.Show("No son par");
                 reinicioBotones(p1);
                 reinicioBotones(p2);
             }
@@ -266,7 +270,13 @@ namespace Memorama
         {
             if (a == 10)
             {
-                MessageBox.Show("Ganaste" + parResuleto);
+                MessageBox.Show("Ganaste");
+                cronometro.Stop();
+                info2[0] = Convert.ToString(contMovimiento);
+                info2[1] = Convert.ToString(contadorTiempo.Text);
+                tabLid = new Tablero_de_lideres(memo, info,info2);
+                tabLid.Show();
+                this.Hide();
             }
         }
         private void reinicioBotones(int a)

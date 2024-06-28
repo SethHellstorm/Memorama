@@ -12,9 +12,14 @@ namespace Memorama
 {
     public partial class Tablero_de_lideres : Form
     {
-        public Tablero_de_lideres()
+        string[] informacion, informacion2;
+        string[,] memoria;
+        public Tablero_de_lideres(string[,] memo, string[] info1, string[]info2)
         {
             InitializeComponent();
+            memoria= memo;
+            informacion = info1;
+            informacion2 = info2;
         }
     }
 }
