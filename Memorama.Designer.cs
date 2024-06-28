@@ -1,4 +1,6 @@
-﻿namespace Memorama
+﻿using Memorama.Properties;
+
+namespace Memorama
 {
     partial class Memorama
     {
@@ -59,6 +61,7 @@
             // 
             // b1
             // 
+            b1.Image = Resources.logo;
             b1.Location = new Point(23, 30);
             b1.Name = "b1";
             b1.Size = new Size(164, 114);
@@ -68,6 +71,7 @@
             // 
             // b2
             // 
+            b2.Image = Resources.logo;
             b2.Location = new Point(194, 30);
             b2.Name = "b2";
             b2.Size = new Size(162, 114);
@@ -77,6 +81,7 @@
             // 
             // b3
             // 
+            b3.Image = Resources.logo;
             b3.Location = new Point(362, 30);
             b3.Name = "b3";
             b3.Size = new Size(162, 114);
@@ -86,6 +91,7 @@
             // 
             // b4
             // 
+            b4.Image = Resources.logo;
             b4.Location = new Point(530, 30);
             b4.Name = "b4";
             b4.Size = new Size(162, 114);
@@ -95,6 +101,7 @@
             // 
             // b5
             // 
+            b5.Image = Resources.logo;
             b5.Location = new Point(698, 30);
             b5.Name = "b5";
             b5.Size = new Size(162, 114);
@@ -104,6 +111,7 @@
             // 
             // b10
             // 
+            b10.Image = Resources.logo;
             b10.Location = new Point(698, 150);
             b10.Name = "b10";
             b10.Size = new Size(162, 114);
@@ -113,6 +121,7 @@
             // 
             // b9
             // 
+            b9.Image = Resources.logo;
             b9.Location = new Point(530, 150);
             b9.Name = "b9";
             b9.Size = new Size(162, 114);
@@ -122,6 +131,7 @@
             // 
             // b8
             // 
+            b8.Image = Resources.logo;
             b8.Location = new Point(362, 150);
             b8.Name = "b8";
             b8.Size = new Size(162, 114);
@@ -131,6 +141,7 @@
             // 
             // b7
             // 
+            b7.Image = Resources.logo;
             b7.Location = new Point(194, 150);
             b7.Name = "b7";
             b7.Size = new Size(162, 114);
@@ -140,6 +151,7 @@
             // 
             // b6
             // 
+            b6.Image = Resources.logo;
             b6.Location = new Point(23, 150);
             b6.Name = "b6";
             b6.Size = new Size(164, 114);
@@ -149,6 +161,7 @@
             // 
             // b15
             // 
+            b15.Image = Resources.logo;
             b15.Location = new Point(698, 268);
             b15.Name = "b15";
             b15.Size = new Size(162, 114);
@@ -158,6 +171,7 @@
             // 
             // b14
             // 
+            b14.Image = Resources.logo;
             b14.Location = new Point(530, 268);
             b14.Name = "b14";
             b14.Size = new Size(162, 114);
@@ -167,6 +181,7 @@
             // 
             // b13
             // 
+            b13.Image = Resources.logo;
             b13.Location = new Point(362, 268);
             b13.Name = "b13";
             b13.Size = new Size(162, 114);
@@ -176,6 +191,7 @@
             // 
             // b12
             // 
+            b12.Image = Resources.logo;
             b12.Location = new Point(194, 268);
             b12.Name = "b12";
             b12.Size = new Size(162, 114);
@@ -185,6 +201,7 @@
             // 
             // b11
             // 
+            b11.Image = Resources.logo;
             b11.Location = new Point(23, 268);
             b11.Name = "b11";
             b11.Size = new Size(164, 114);
@@ -194,6 +211,7 @@
             // 
             // b20
             // 
+            b20.Image = Resources.logo;
             b20.Location = new Point(698, 388);
             b20.Name = "b20";
             b20.Size = new Size(162, 114);
@@ -203,6 +221,7 @@
             // 
             // b19
             // 
+            b19.Image = Resources.logo;
             b19.Location = new Point(530, 388);
             b19.Name = "b19";
             b19.Size = new Size(162, 114);
@@ -212,6 +231,7 @@
             // 
             // b18
             // 
+            b18.Image = Resources.logo;
             b18.Location = new Point(362, 388);
             b18.Name = "b18";
             b18.Size = new Size(162, 114);
@@ -221,6 +241,7 @@
             // 
             // b17
             // 
+            b17.Image = Resources.logo;
             b17.Location = new Point(194, 388);
             b17.Name = "b17";
             b17.Size = new Size(162, 114);
@@ -230,6 +251,7 @@
             // 
             // b16
             // 
+            b16.Image = Resources.logo;
             b16.Location = new Point(23, 388);
             b16.Name = "b16";
             b16.Size = new Size(164, 114);
