@@ -1,4 +1,6 @@
-﻿namespace Memorama
+﻿using Memorama.Properties;
+
+namespace Memorama
 {
     partial class Registro
     {
@@ -37,6 +39,10 @@
             textoNombre = new TextBox();
             textoNickname = new TextBox();
             textoEdad = new TextBox();
+            gif2 = new PictureBox();
+            gif1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)gif2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gif1).BeginInit();
             SuspendLayout();
             // 
             // anuncioRegistro
@@ -116,12 +122,38 @@
             textoEdad.Size = new Size(100, 23);
             textoEdad.TabIndex = 8;
             // 
+            // gif2
+            // 
+            gif2.BackgroundImageLayout = ImageLayout.Center;
+            gif2.BorderStyle = BorderStyle.FixedSingle;
+            gif2.Image = Resources.Inugami_Korone_IdleAnim;
+            gif2.Location = new Point(445, 130);
+            gif2.Name = "gif2";
+            gif2.Size = new Size(50, 60);
+            gif2.SizeMode = PictureBoxSizeMode.AutoSize;
+            gif2.TabIndex = 9;
+            gif2.TabStop = false;
+            // 
+            // gif1
+            // 
+            gif1.BackgroundImageLayout = ImageLayout.Center;
+            gif1.BorderStyle = BorderStyle.FixedSingle;
+            gif1.Image = Resources.Hakos_Baelz_IdleAnim;
+            gif1.Location = new Point(39, 120);
+            gif1.Name = "gif1";
+            gif1.Size = new Size(78, 70);
+            gif1.SizeMode = PictureBoxSizeMode.AutoSize;
+            gif1.TabIndex = 10;
+            gif1.TabStop = false;
+            // 
             // Registro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(560, 270);
+            Controls.Add(gif1);
+            Controls.Add(gif2);
             Controls.Add(textoEdad);
             Controls.Add(textoNickname);
             Controls.Add(textoNombre);
@@ -131,11 +163,13 @@
             Controls.Add(anuncioNickname);
             Controls.Add(anuncioNombre);
             Controls.Add(anuncioRegistro);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Registro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registro";
             Load += Registro_Load;
+            ((System.ComponentModel.ISupportInitialize)gif2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gif1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -151,5 +185,7 @@
         private TextBox textoNombre;
         private TextBox textoNickname;
         private TextBox textoEdad;
+        private PictureBox gif2;
+        private PictureBox gif1;
     }
 }

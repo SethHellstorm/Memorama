@@ -1,4 +1,6 @@
-﻿namespace Memorama
+﻿using Memorama.Properties;
+
+namespace Memorama
 {
     partial class Tablero_de_lideres
     {
@@ -67,6 +69,12 @@
             edad5to = new Label();
             tiempo5to = new Label();
             movimientos5to = new Label();
+            gif1 = new PictureBox();
+            gif2 = new PictureBox();
+            gif3 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)gif1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gif2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gif3).BeginInit();
             SuspendLayout();
             // 
             // anuncioLideres
@@ -459,12 +467,51 @@
             movimientos5to.TabIndex = 34;
             movimientos5to.Text = "movimientos5";
             // 
+            // gif1
+            // 
+            gif1.BackgroundImageLayout = ImageLayout.Center;
+            gif1.BorderStyle = BorderStyle.FixedSingle;
+            gif1.Image = Resources.Kureiji_Ollie_IdleAnim;
+            gif1.Location = new Point(43, 366);
+            gif1.Name = "gif1";
+            gif1.Size = new Size(92, 72);
+            gif1.SizeMode = PictureBoxSizeMode.AutoSize;
+            gif1.TabIndex = 39;
+            gif1.TabStop = false;
+            // 
+            // gif2
+            // 
+            gif2.BackgroundImageLayout = ImageLayout.Center;
+            gif2.BorderStyle = BorderStyle.FixedSingle;
+            gif2.Image = Resources.Takanashi_Kiara_IdleAnim;
+            gif2.Location = new Point(376, 366);
+            gif2.Name = "gif2";
+            gif2.Size = new Size(52, 68);
+            gif2.SizeMode = PictureBoxSizeMode.AutoSize;
+            gif2.TabIndex = 40;
+            gif2.TabStop = false;
+            // 
+            // gif3
+            // 
+            gif3.BackgroundImageLayout = ImageLayout.Center;
+            gif3.BorderStyle = BorderStyle.FixedSingle;
+            gif3.Image = Resources.Tokino_Sora_IdleAnim;
+            gif3.Location = new Point(666, 366);
+            gif3.Name = "gif3";
+            gif3.Size = new Size(50, 68);
+            gif3.SizeMode = PictureBoxSizeMode.AutoSize;
+            gif3.TabIndex = 41;
+            gif3.TabStop = false;
+            // 
             // Tablero_de_lideres
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 471);
+            Controls.Add(gif3);
+            Controls.Add(gif2);
+            Controls.Add(gif1);
             Controls.Add(nombre5to);
             Controls.Add(nickname5to);
             Controls.Add(edad5to);
@@ -507,6 +554,9 @@
             Name = "Tablero_de_lideres";
             Text = "Tablero_de_lideres";
             Load += Tablero_de_lideres_Load;
+            ((System.ComponentModel.ISupportInitialize)gif1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gif2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gif3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -552,5 +602,8 @@
         private Label edad5to;
         private Label tiempo5to;
         private Label movimientos5to;
+        private PictureBox gif1;
+        private PictureBox gif2;
+        private PictureBox gif3;
     }
 }

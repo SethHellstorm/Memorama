@@ -73,9 +73,39 @@ namespace Memorama.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aki_Rosenthal_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("Aki_Rosenthal_IdleAnim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ayunda_Risu_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("Ayunda_Risu_IdleAnim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AZKi {
             get {
                 object obj = ResourceManager.GetObject("AZKi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AZKi_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("AZKi_IdleAnim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +143,49 @@ namespace Memorama.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Calliope_Mori_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("Calliope_Mori_IdleAnim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hakos_Baelz_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("Hakos_Baelz_IdleAnim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inugami_Korone_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("Inugami_Korone_IdleAnim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IRyS {
             get {
                 object obj = ResourceManager.GetObject("IRyS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IRyS_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("IRyS_IdleAnim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +206,16 @@ namespace Memorama.Properties {
         internal static System.Drawing.Bitmap Korone {
             get {
                 object obj = ResourceManager.GetObject("Korone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kureiji_Ollie_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("Kureiji_Ollie_IdleAnim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +256,26 @@ namespace Memorama.Properties {
         internal static System.Drawing.Bitmap Sora {
             get {
                 object obj = ResourceManager.GetObject("Sora", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Takanashi_Kiara_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("Takanashi_Kiara_IdleAnim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tokino_Sora_IdleAnim {
+            get {
+                object obj = ResourceManager.GetObject("Tokino_Sora_IdleAnim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
