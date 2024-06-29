@@ -57,6 +57,8 @@ namespace Memorama
             botonPausar = new Button();
             botonCancelar = new Button();
             bReset = new Button();
+            anuncioJugador = new Label();
+            Nickname = new Label();
             SuspendLayout();
             // 
             // b1
@@ -263,7 +265,7 @@ namespace Memorama
             // 
             anuncioMovimiento.AutoSize = true;
             anuncioMovimiento.Font = new Font("Segoe UI", 12F);
-            anuncioMovimiento.Location = new Point(912, 45);
+            anuncioMovimiento.Location = new Point(912, 123);
             anuncioMovimiento.Name = "anuncioMovimiento";
             anuncioMovimiento.Size = new Size(94, 21);
             anuncioMovimiento.TabIndex = 20;
@@ -273,7 +275,7 @@ namespace Memorama
             // 
             conteoMovimiento.AutoSize = true;
             conteoMovimiento.Font = new Font("Segoe UI", 18F);
-            conteoMovimiento.Location = new Point(945, 79);
+            conteoMovimiento.Location = new Point(945, 150);
             conteoMovimiento.Name = "conteoMovimiento";
             conteoMovimiento.Size = new Size(27, 32);
             conteoMovimiento.TabIndex = 21;
@@ -284,7 +286,7 @@ namespace Memorama
             // 
             anuncioTiempo.AutoSize = true;
             anuncioTiempo.Font = new Font("Segoe UI", 12F);
-            anuncioTiempo.Location = new Point(925, 142);
+            anuncioTiempo.Location = new Point(925, 197);
             anuncioTiempo.Name = "anuncioTiempo";
             anuncioTiempo.Size = new Size(62, 21);
             anuncioTiempo.TabIndex = 22;
@@ -294,7 +296,7 @@ namespace Memorama
             // 
             contadorTiempo.AutoSize = true;
             contadorTiempo.Font = new Font("Segoe UI", 18F);
-            contadorTiempo.Location = new Point(921, 174);
+            contadorTiempo.Location = new Point(921, 229);
             contadorTiempo.Name = "contadorTiempo";
             contadorTiempo.Size = new Size(71, 32);
             contadorTiempo.TabIndex = 23;
@@ -303,7 +305,7 @@ namespace Memorama
             // 
             // botonPausar
             // 
-            botonPausar.Location = new Point(921, 241);
+            botonPausar.Location = new Point(921, 268);
             botonPausar.Name = "botonPausar";
             botonPausar.Size = new Size(75, 23);
             botonPausar.TabIndex = 24;
@@ -313,7 +315,7 @@ namespace Memorama
             // 
             // botonCancelar
             // 
-            botonCancelar.Location = new Point(912, 334);
+            botonCancelar.Location = new Point(912, 437);
             botonCancelar.Name = "botonCancelar";
             botonCancelar.Size = new Size(94, 37);
             botonCancelar.TabIndex = 25;
@@ -323,19 +325,41 @@ namespace Memorama
             // 
             // bReset
             // 
-            bReset.Location = new Point(921, 445);
+            bReset.Location = new Point(912, 327);
             bReset.Name = "bReset";
-            bReset.Size = new Size(75, 23);
+            bReset.Size = new Size(94, 55);
             bReset.TabIndex = 26;
-            bReset.Text = "Reset";
+            bReset.Text = "Reiniciar partida";
             bReset.UseVisualStyleBackColor = true;
             bReset.Click += reset_Click;
+            // 
+            // anuncioJugador
+            // 
+            anuncioJugador.AutoSize = true;
+            anuncioJugador.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            anuncioJugador.Location = new Point(912, 21);
+            anuncioJugador.Name = "anuncioJugador";
+            anuncioJugador.Size = new Size(100, 30);
+            anuncioJugador.TabIndex = 27;
+            anuncioJugador.Text = "Jugador:";
+            // 
+            // Nickname
+            // 
+            Nickname.AutoSize = true;
+            Nickname.Location = new Point(907, 70);
+            Nickname.Name = "Nickname";
+            Nickname.Size = new Size(105, 15);
+            Nickname.TabIndex = 28;
+            Nickname.Text = "Nickname jugador";
             // 
             // Memorama
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(1076, 532);
+            Controls.Add(Nickname);
+            Controls.Add(anuncioJugador);
             Controls.Add(bReset);
             Controls.Add(botonCancelar);
             Controls.Add(botonPausar);
@@ -400,5 +424,7 @@ namespace Memorama
         private Button botonPausar;
         private Button botonCancelar;
         private Button bReset;
+        private Label anuncioJugador;
+        private Label Nickname;
     }
 }

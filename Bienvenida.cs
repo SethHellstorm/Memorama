@@ -59,7 +59,6 @@ namespace Memorama
 
         private void Bienvenida_Load(object sender, EventArgs e)
         {
-            
         }
     }
 }

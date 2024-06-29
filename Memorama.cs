@@ -270,10 +270,13 @@ namespace Memorama
         {
             if (a == 10)
             {
-                MessageBox.Show("Ganaste");
+                
                 cronometro.Stop();
-                info2[0] = Convert.ToString(contMovimiento);
+                info2[0] = Convert.ToString(contMovimiento/2);
                 info2[1] = Convert.ToString(contadorTiempo.Text);
+                string aux = info2[1];
+                string[] res = aux.Split(":");
+                MessageBox.Show("Ganaste con: " + res[1] + " minutos y " + res[2] + " segundos y " + info2[0] + " movimientos");
                 tabLid = new Tablero_de_lideres(memo, info,info2);
                 tabLid.Show();
                 this.Hide();
@@ -541,6 +544,10 @@ namespace Memorama
             horaInicio = DateTime.Now - tiempoTranscurrido;
             cronometro.Start();
             corriendo = true;
+            Nickname.Text = info[1];
+            conteoSeleccionado = 0;
+            parResuleto = 0;
+            contMovimiento = 0;
 
             generarLugares();
         }
