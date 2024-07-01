@@ -551,6 +551,28 @@ namespace Memorama
             parResuleto = 0;
             contMovimiento = 0;
 
+            b1.Paint += new PaintEventHandler(recolor);
+            b2.Paint += new PaintEventHandler(recolor);
+            b3.Paint += new PaintEventHandler(recolor);
+            b4.Paint += new PaintEventHandler(recolor);
+            b5.Paint += new PaintEventHandler(recolor);
+            b6.Paint += new PaintEventHandler(recolor);
+            b7.Paint += new PaintEventHandler(recolor);
+            b8.Paint += new PaintEventHandler(recolor);
+            b9.Paint += new PaintEventHandler(recolor);
+            b10.Paint += new PaintEventHandler(recolor);
+            b11.Paint += new PaintEventHandler(recolor);
+            b12.Paint += new PaintEventHandler(recolor);
+            b13.Paint += new PaintEventHandler(recolor);
+            b14.Paint += new PaintEventHandler(recolor);
+            b15.Paint += new PaintEventHandler(recolor);
+            b16.Paint += new PaintEventHandler(recolor);
+            b17.Paint += new PaintEventHandler(recolor);
+            b18.Paint += new PaintEventHandler(recolor);
+            b19.Paint += new PaintEventHandler(recolor);
+            b20.Paint += new PaintEventHandler(recolor);
+
+
             generarLugares();
         }
 
