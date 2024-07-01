@@ -12,8 +12,8 @@ namespace Memorama
 {
     public partial class Bienvenida : Form
     {
-        Registro regis;
-        string[,] memoriaInicial = new string[5, 5];
+        Registro regis; //Crea la instancia de la siguiente ventana
+        string[,] memoriaInicial = new string[5, 5]; //
 
         public Bienvenida()
         {
