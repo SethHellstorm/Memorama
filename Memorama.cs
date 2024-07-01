@@ -526,6 +526,8 @@ namespace Memorama
             press19 = false;
             press20 = false;
 
+            conteoSeleccionado = 0;
+
             parResuleto = 0;
             contMovimiento = 0;
 
