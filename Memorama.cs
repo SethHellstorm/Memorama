@@ -754,90 +754,89 @@ namespace Memorama
         }
 
         private void botonPausar_Click(object sender, EventArgs e)
-        {
+        { //Evento para el botón de pausar
             if (!corriendo)
-            {
-                horaInicio = DateTime.Now - tiempoTranscurrido;
-                cronometro.Start();
-                corriendo = true;
-                pausarBotones(0);
+            { //Si la variable corriendo es falsa
+                horaInicio = DateTime.Now - tiempoTranscurrido; // Damos hora de inicio
+                cronometro.Start(); //Iniciamos cronometro
+                corriendo = true; //Cambiamos corriendo a true
+                pausarBotones(0); //Llamó a la funciones pausar botones
             }
             else if (corriendo)
-            {
-                cronometro.Stop();
-                corriendo = false;
-                pausarBotones(1);
+            { // Si la variable es true
+                cronometro.Stop(); //Detener el cronometro
+                corriendo = false; //Cambiamos corriendo a false
+                pausarBotones(1); // Llamamos a la función pausar botones
             }
         }
         private void pausarBotones(int num)
-        {
+        { // Función para la pausa de botones, toma como argumento un int
             switch (num)
-            {
-                case 0:
-                    if (!press1)
-                        b1.Enabled = true;
-                    if (!press2)
-                        b2.Enabled = true;
-                    if (!press3)
-                        b3.Enabled = true;
-                    if (!press4)
-                        b4.Enabled = true;
-                    if (!press5)
-                        b5.Enabled = true;
-                    if (!press6)
-                        b6.Enabled = true;
-                    if (!press7)
-                        b7.Enabled = true;
-                    if (!press8)
-                        b8.Enabled = true;
-                    if (!press9)
-                        b9.Enabled = true;
-                    if (!press10)
-                        b10.Enabled = true;
-                    if (!press11)
-                        b11.Enabled = true;
-                    if (!press12)
-                        b12.Enabled = true;
-                    if (!press13)
-                        b13.Enabled = true;
-                    if (!press14)
-                        b14.Enabled = true;
-                    if (!press15)
-                        b15.Enabled = true;
-                    if (!press16)
-                        b16.Enabled = true;
-                    if (!press17)
-                        b17.Enabled = true;
-                    if (!press18)
-                        b18.Enabled = true;
-                    if (!press19)
-                        b19.Enabled = true;
-                    if (!press20)
-                        b20.Enabled = true;
-
-                    break;
-                case 1:
-                    b1.Enabled = false;
-                    b2.Enabled = false;
-                    b3.Enabled = false;
-                    b4.Enabled = false;
-                    b5.Enabled = false;
-                    b6.Enabled = false;
-                    b7.Enabled = false;
-                    b8.Enabled = false;
-                    b9.Enabled = false;
-                    b10.Enabled = false;
-                    b11.Enabled = false;
-                    b12.Enabled = false;
-                    b13.Enabled = false;
-                    b14.Enabled = false;
-                    b15.Enabled = false;
-                    b16.Enabled = false;
-                    b17.Enabled = false;
-                    b18.Enabled = false;
-                    b19.Enabled = false;
-                    b20.Enabled = false;
-                    break;
+            { // revisamos con la variable num
+                case 0: //Caso cero
+                    if (!press1) //Revisamos si el botón ha sido presionado
+                        b1.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press2) //Revisamos si el botón ha sido presionado
+                        b2.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press3) //Revisamos si el botón ha sido presionado
+                        b3.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press4) //Revisamos si el botón ha sido presionado
+                        b4.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press5) //Revisamos si el botón ha sido presionado
+                        b5.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press6) //Revisamos si el botón ha sido presionado
+                        b6.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press7) //Revisamos si el botón ha sido presionado
+                        b7.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press8) //Revisamos si el botón ha sido presionado
+                        b8.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press9) //Revisamos si el botón ha sido presionado
+                        b9.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press10) //Revisamos si el botón ha sido presionado
+                        b10.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press11) //Revisamos si el botón ha sido presionado
+                        b11.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press12) //Revisamos si el botón ha sido presionado
+                        b12.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press13) //Revisamos si el botón ha sido presionado
+                        b13.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press14) //Revisamos si el botón ha sido presionado
+                        b14.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press15) //Revisamos si el botón ha sido presionado
+                        b15.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press16) //Revisamos si el botón ha sido presionado
+                        b16.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press17) //Revisamos si el botón ha sido presionado
+                        b17.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press18) //Revisamos si el botón ha sido presionado
+                        b18.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press19) //Revisamos si el botón ha sido presionado
+                        b19.Enabled = true; //Si no estaba presionado se da enable
+                    if (!press20) //Revisamos si el botón ha sido presionado
+                        b20.Enabled = true; //Si no estaba presionado se da enable
+                    break; //Terminamos el caso
+                case 1: //Caso uno
+                    b1.Enabled = false; //Deshabilitamos el botones
+                    b2.Enabled = false; //Deshabilitamos el botones
+                    b3.Enabled = false; //Deshabilitamos el botones
+                    b4.Enabled = false; //Deshabilitamos el botones
+                    b5.Enabled = false; //Deshabilitamos el botones
+                    b6.Enabled = false; //Deshabilitamos el botones
+                    b7.Enabled = false; //Deshabilitamos el botones
+                    b8.Enabled = false; //Deshabilitamos el botones
+                    b9.Enabled = false; //Deshabilitamos el botones
+                    b10.Enabled = false; //Deshabilitamos el botones
+                    b11.Enabled = false; //Deshabilitamos el botones
+                    b12.Enabled = false; //Deshabilitamos el botones
+                    b13.Enabled = false; //Deshabilitamos el botones
+                    b14.Enabled = false; //Deshabilitamos el botones
+                    b15.Enabled = false; //Deshabilitamos el botones
+                    b16.Enabled = false; //Deshabilitamos el botones
+                    b17.Enabled = false; //Deshabilitamos el botones
+                    b18.Enabled = false; //Deshabilitamos el botones
+                    b19.Enabled = false; //Deshabilitamos el botones
+                    b20.Enabled = false; //Deshabilitamos el botones
+                    break; //Terminamos el caso
             }
         }
         private void contadorTiempo_Click(object sender, EventArgs e)
