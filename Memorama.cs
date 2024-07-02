@@ -418,8 +418,6 @@ namespace Memorama
             this.Close();
         }
 
-
-
         private void recolor(object sender, PaintEventArgs e)
         {
             Button btn = sender as Button;
