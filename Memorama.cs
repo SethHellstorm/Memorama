@@ -266,6 +266,7 @@ namespace Memorama
                 info2[1] = Convert.ToString(contadorTiempo.Text); //Guardamos el tiempo
                 string aux = info2[1]; //Ponemos el tiempo en una variable
                 string[] res = aux.Split(":"); //Dividimos usando el : como divisor y lo guardamos en un arreglo
+                parResuleto = 0; //Reiniciamos el conteo para partidas subsecuentes
                 MessageBox.Show("Ganaste con: " + res[1] + " minutos y " + res[2] + " segundos y " + info2[0] + " movimientos"); //Mensaje de felicitación y donde daremos que tiempo se hizo
                 tabLid = new Tablero_de_lideres(memo, info, info2); //Inicializamos la siguiente ventana y enviamos memoria junto con ambor arreglos con la información
                 tabLid.Show(); //Mostramos la siguiente ventana
@@ -520,7 +521,7 @@ namespace Memorama
             cronometro.Stop(); //Detenemos el cronómetro
             corriendo = false; //Ponemos corriendo como falso
             tiempoTranscurrido = TimeSpan.Zero; //Volvemos tiempo transcurrido cero
-            contadorTiempo.Text = "00:00:00"; //
+            contadorTiempo.Text = "00:00:00"; //Ponemos el tiempo a cero
             horaInicio = DateTime.Now - tiempoTranscurrido; //Reiniciamos la hora de inicio
             cronometro.Start(); // Iniciamos el cronometro
         }
